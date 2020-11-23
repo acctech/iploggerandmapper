@@ -23,6 +23,7 @@ function logMyDownload(){
     log(responseBody);
 
     // Let the user get the download here //
+    alert("Thank you");
 }
 
 function getGeoData(){
@@ -36,5 +37,5 @@ function getGoogleJSONData(){
     log(JSON.stringify(responseBody));
 }
 
-log("Script Loaded");
+log("...");
 

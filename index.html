@@ -17,8 +17,9 @@
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
         #map {
-            height: 720px;
-            width: 720px;
+            height: 240px;
+            width: 50%;
+            padding: 10%;
         }
 
         /* Optional: Makes the sample page fill the window. */
@@ -70,9 +71,9 @@
 <body>
 
 <h1>Console Output</h1>
-<p id="output">...</p>
+<p id="output"></p>
 <div>
-    <button onclick="logMyDownload()">Simulate download and Send My IP</button>
+    <button onclick="logMyDownload()">Simulate Download</button>
 </div>
 <div>
     <button onclick="getGeoData()">Get Geo Data Dump</button>
@@ -80,7 +81,7 @@
 <div>
     <button onclick="getGoogleJSONData()">Google GEO Data Dump</button>
 </div>
-<h1>Map</h1>
+<h1>Map of Users who have reported their IP</h1>
 <div id="map"></div>
 </body>
 

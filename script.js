@@ -33,7 +33,7 @@ function getGeoData(){
 function getGoogleJSONData(){
     //https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec?geodata=1&googlemap=1
     let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1"));
-    log(responseBody);
+    log(JSON.stringify(responseBody));
 }
 
 log("Script Loaded");

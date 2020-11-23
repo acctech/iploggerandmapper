@@ -32,15 +32,13 @@
         let map;
 
         function initMap() {
+
             map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 3,
                 center: new google.maps.LatLng(-25.274398, 133.775136),
                 mapTypeId: "terrain",
             });
-            // Create a <script> tag and set the USGS URL as the source.
-            const script = document.createElement("script");
-            // This example uses a local copy of the GeoJSON stored at
-            // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+
             function httpGet(theUrl)
             {
                 var xmlHttp = new XMLHttpRequest();
@@ -50,6 +48,7 @@
             }
             let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1"));
             eqfeed_callback(responseBody);
+
         }
 
         // Loop through the results array and place a marker for each

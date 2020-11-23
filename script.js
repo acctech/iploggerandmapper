@@ -37,5 +37,11 @@ function getGoogleJSONData(){
     log(JSON.stringify(responseBody));
 }
 
+function getDownloadCounter(){
+    //https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec?counter=1
+    let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&counter=1"));
+    return(Math.trunc(responseBody.counter));
+}
+
 log("...");
 

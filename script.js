@@ -19,9 +19,15 @@ function getIP(){
 function logMyDownload(){
     let ip = getIP();
     log(ip);
-    log(JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?ip=" + ip)).body);
+    let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?ip=" + ip)).body;
+    log(responseBody);
 
     // Let the user get the download here //
+}
+
+function getGeoData(){
+    let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1")).body;
+    log(responseBody);
 }
 
 log("Script Loaded");

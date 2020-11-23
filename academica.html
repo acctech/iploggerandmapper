@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ACC Journals | Australian Christian College</title>
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <link rel="stylesheet" href="https://assets.acc.edu.au/css/SharedStructure.min.css?v=X200908">
+    <link rel="stylesheet" type="text/css" href="https://www.acc.edu.au/css/main.css?v=201110">
+    <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Montserrat:300);</style>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.acc.edu.au/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://www.acc.edu.au/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.acc.edu.au/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.acc.edu.au/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.acc.edu.au/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://www.acc.edu.au/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.acc.edu.au/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.acc.edu.au/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.acc.edu.au/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.acc.edu.au/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.acc.edu.au/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://www.acc.edu.au/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.acc.edu.au/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://www.acc.edu.au/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#2a333c">
+    <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#2a333c">
+    <script>!function (e, t, a, n, r) {
+        e[n] = e[n] || [], e[n].push({"gtm.start": (new Date).getTime(), event: "gtm.js"});
+        var g = t.getElementsByTagName(a)[0], m = t.createElement(a), s = "dataLayer" != n ? "&l=" + n : "";
+        m.async = !0, m.src = "https://www.googletagmanager.com/gtm.js?id=" + r + s, g.parentNode.insertBefore(m, g)
+    }(window, document, "script", "dataLayer", "GTM-WMFPBV");</script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap"
+            defer>
+    </script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap">
+    </script>
+
+    <script>
+        let map;
+
+        function initMap() {
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 3,
+                center: new google.maps.LatLng(-25.274398, 133.775136),
+                mapId: "d7b42814bf968e06",
+                disableDefaultUI: true
+            });
+
+            function httpGet(theUrl)
+            {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+                xmlHttp.send( null );
+                return xmlHttp.responseText;
+            }
+            let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1"));
+            eqfeed_callback(responseBody);
+
+        }
+
+        // Loop through the results array and place a marker for each
+        // set of coordinates.
+        const eqfeed_callback = function (results) {
+            for (let i = 0; i < results.features.length; i++) {
+                const coords = results.features[i].geometry.coordinates;
+                const latLng = new google.maps.LatLng(coords[1], coords[0]);
+                new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                });
+            }
+        };
+    </script>
+</head>
+<body itemscope itemtype="//schema.org/EducationalOrganization" class="internal-page-container wrapper"
+      id="eGuides-gallery"><!--[if lte IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong>
+    browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
+</p><![endif]-->
+<header class="top top-bkg-on headerOfElementsIsGrey">
+    <div class="acc-logo logo-light"><a title="Australian Christian College Logo" class="animate-link"
+                                        href="https://www.acc.edu.au/">
+        <svg xmlns="http://www.w3.org/2000/svg" height="auto" width="100%" viewBox="0 0 280 300"
+             style="max-width: 80px;">
+            <defs>
+            </defs>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path fill="#FFFFFF" d="M258.4,28.6C232.9,14.9,196.7,1.9,130.9,1.9C67.3,1.9,34.1,13.4,3.3,28.6C0.4,30-0.6,138.4,28.9,195.9
+					c31.1,60.7,73.6,77,101.9,89c28.3-12,70.8-28.3,101.9-89C262.3,138.4,261.3,30.1,258.4,28.6z"/>
+                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="50.0098" y1="-9.1108"
+                                            x2="227.4855" y2="225.7032">
+                                <stop offset="0" style="stop-color:#3265AD"/>
+                                <stop offset="0.1524" style="stop-color:#2F5EA3"/>
+                                <stop offset="1" style="stop-color:#1D3561"/>
+                            </linearGradient>
+                            <path fill="url(#SVGID_1_)" d="M130.9,287l-3.8-1.6c-27.7-11.7-69.5-29.4-99.9-88.6C-1.7,140.4-1.6,37.1,1.2,28.5
+					c0.1-0.3,0.4-1.2,1.2-1.6C36.1,10.3,69.3,0,130.9,0c69.3,0,105.1,14.4,128.5,26.9l0,0c1,0.5,2.3,1.2,2.3,20.4
+					c0,7.7-0.2,23.6-2.1,44.1c-2.8,31.1-9.4,74.6-25.2,105.4c-30.3,59.2-72.2,76.9-99.9,88.6L130.9,287z M4.7,30
+					C2.7,38.3,2,139.1,30.6,195.1c29.7,58,69.2,74.7,98,86.9l2.3,1l2.3-1c28.8-12.2,68.2-28.8,98-86.9
+					C259.7,139.3,258.9,38.2,257,30C234,17.7,198.8,3.8,130.9,3.8C70.4,3.8,37.7,13.8,4.7,30z M257.5,30.3
+					C257.5,30.3,257.5,30.3,257.5,30.3L257.5,30.3C257.5,30.3,257.5,30.3,257.5,30.3z M4.8,29.6 M256.9,29.6L256.9,29.6L256.9,29.6z
+					"/>
+                        </g>
+                        <g>
+                            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="61.3794" y1="8.2816"
+                                            x2="219.0117" y2="216.8413">
+                                <stop offset="0" style="stop-color:#3265AD"/>
+                                <stop offset="0.1524" style="stop-color:#2F5EA3"/>
+                                <stop offset="1" style="stop-color:#1D3561"/>
+                            </linearGradient>
+                            <path fill="url(#SVGID_2_)" d="M251.9,34.4c-24.2-13-58.6-25.3-121.1-25.3C70.5,9.1,39,20,9.8,34.4C7,35.8,6.1,138.6,34.1,193.2
+					c29.5,57.7,69.9,73.1,96.7,84.5c26.9-11.4,67.2-26.8,96.7-84.5C255.6,138.6,254.6,35.9,251.9,34.4z M69.8,158.1
+					c0,0-1.9-20.9-1.2-24.2c4.8-24,117.1-33.6,152.1-35.1C220.6,98.8,83.5,121.1,69.8,158.1z M67.3,121.4c0,0-2.4-18.2,2.9-21.4
+					c10.2-6.1,100.7-13.8,159.9-4.6C230,95.4,82.1,97.1,67.3,121.4z M61.3,91.6c0.1,33.8,4.1,81.8,19.1,146.4
+					c0,0-22.6-49.2-25.2-142.8c0-0.9,0-1.7-0.1-2.6c-17.1,2.9-25.4,5.3-26.7,3.6c-2.9-3.9-18.1-9.6,26.4-13.4
+					c-1.6-79.1,4.7-59.5,9.5-56.6c2.6,1.6-2.5,19-3.1,56.1c9.3-0.7,20.8-1.3,34.9-1.8c91-3.3,144.5,11.6,144.5,11.6
+					C150.4,81.2,93.3,86.6,61.3,91.6z"/>
+                        </g>
+                    </g>
+                    <path fill="#A1A2A1"
+                          d="M69.8,158.1c0,0-0.7-7.9-1.1-14.7c-0.2-4.3,21.4-25.1,152-44.6C220.6,98.8,83.5,121.1,69.8,158.1z"/>
+                    <path fill="#A1A2A1"
+                          d="M67.3,121.4c0,0-0.4-2.8-0.5-6.4c-0.2-5.6,50.3-20.5,163.3-19.6C230,95.4,82.1,97.1,67.3,121.4z"/>
+                </g>
+            </g>
+        </svg>
+        <span id="logo-title" class="" style=""><span class="australian">AUSTRALIAN</span> <span
+                class="christian-college">CHRISTIAN COLLEGE</span> <span class="campus"></span></span></a></div>
+    <a href="#main-menu" class="menu-toggle" role="button" id="main-menu-toggle" aria-expanded="false"
+       aria-controls="main-menu" aria-label="Open main menu"><span class="sr-only">Open main menu</span> <span
+            class="fa fa-bars" aria-hidden="true"><svg width="23px" height="20px" viewBox="0 0 27.4 24" style="enable-background:new 0 0 27.4 24;" xml:space="preserve">
+                <g>
+                    <rect x="0" y="20" class="white-fill" width="27.4" height="4"/>
+                    <rect x="0" y="10" class="white-fill" width="27.4" height="4"/>
+                    <rect x="0" class="white-fill" width="27.4" height="4"/>
+                </g>
+                </svg></span></a>
+    <nav id="main-menu" class="main-menu" role="navigation" aria-expanded="false" aria-label="Main menu"><a
+            href="#main-menu-toggle" class="menu-close" role="button" id="main-menu-close" aria-expanded="false"
+            aria-controls="main-menu" aria-label="Close main menu"><span class="sr-only">Close main menu</span> <span
+            class="fa fa-close" aria-hidden="true"><svg width="14.8px" height="14.8px" viewBox="0 0 14.8 14.8" style="enable-background:new 0 0 14.8 14.8;" xml:space="preserve">
+                    <polygon class="white-fill"
+                             points="14.8,2.8 12,0 7.4,4.6 2.8,0 0,2.8 4.6,7.4 0,12 2.8,14.8 7.4,10.3 12,14.8 14.8,12 10.3,7.4 "/>
+                    </svg></span></a>
+        <ul>
+            <li><a href="/about.html" class="cd-btn" data-type="page-transition">About</a></li>
+            <li class="ParentItem" role="menuitem"><a href="#" onclick="return!1">Schools&nbsp;&nbsp;<span
+                    class="reveal"></span></a>
+                <ul class="megaMenu" id="schools"><h3 style="color:#fff">Select a School</h3>
+                    <li><a target="_blank" href="https://www.acc.edu.au/moreton/">Moreton, QLD</a></li>
+                    <li><a target="_blank" href="https://singleton.acc.edu.au/">Singleton, NSW</a></li>
+                    <li><a target="_blank" href="https://brightwaterschristiancollege.com.au/">Brightwaters, NSW</a>
+                    </li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/marsdenpark/">Marsden Park, NSW</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/hume">Hume, VIC</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/darlingdowns/">Darling Downs, WA</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/southlands/">Southlands, WA</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/burnie/">Burnie, TAS</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/launceston/">Launceston, TAS</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/hobart/">Hobart, TAS</a></li>
+                </ul>
+            </li>
+            <li role="menuitem"><a href="https://www.acc.edu.au/careers">Careers</a>
+                <ul class="megaMenu" id="careers"><h3 style="color:#fff">Select a State</h3>
+                    <li><a target="_blank" href="https://www.acc.edu.au/careers.html#qld">Queensland</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/careers.html#nsw">New South Wales</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/careers.html#vic">Victoria</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/careers.html#wa">Western Australia</a></li>
+                    <li><a target="_blank" href="https://www.acc.edu.au/careers.html#tas">Tasmania</a></li>
+                </ul>
+            </li>
+            <li class="ParentItem" role="menuitem"><a href="#" onclick="return!1">Resources&nbsp;&nbsp;<span
+                    class="reveal"></span></a>
+                <ul class="megaMenu" id="resources"><h3 style="color:#fff">Select a Resource</h3>
+                    <li><a href="https://www.acc.edu.au/blog">Blog</a></li>
+                    <li><a href="https://www.acc.edu.au/podcast">Podcast</a></li>
+                    <li><a href="https://www.acc.edu.au/eguides">Guides</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.acc.edu.au/newsroom/" class="cd-btn" data-type="page-transition">Newsroom</a></li>
+        </ul>
+    </nav>
+    <a href="#main-menu-toggle" class="backdrop" tabindex="-1" aria-hidden="true" hidden></a></header>
+<main class="internal-page-container cd-main-content fullWidth"><!-- IE message [if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+            href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
+    </p><![endif]-->
+    <section>
+        <div class="section fluid-container">
+            <style type="text/css">@media (min-width: 768px) {
+                main {
+                    padding-bottom: 0
+                }
+            }
+
+            section {
+                padding-top: 0;
+                padding-bottom: 0
+            }
+
+            #journalhhg56-wrapper section {
+                width: 100%
+            }
+
+            #journalhhg56-wrapper h2 {
+                margin: 0 0 1rem 0
+            }
+
+            @media (max-width: 250px) {
+                #journalhhg56-wrapper .header-image img, #journalhhg56-wrapper .header-image picture {
+                    min-height: 411px
+                }
+            }
+
+            #journalhhg56-wrapper .header-image img, #journalhhg56-wrapper .header-image picture {
+                position: absolute;
+                display: block;
+                width: 100vw;
+                height: auto;
+                overflow: hidden;
+                left: 0;
+                right: 0;
+                top: 90px;
+                bottom: unset;
+                z-index: -1;
+                filter: brightness(0.7)
+            }
+
+            #journalhhg56-wrapper .maxWidth1200 {
+                margin-top: 0;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto
+            }
+
+            #journalhhg56-wrapper .maxWidth800 {
+                margin-top: 0;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto
+
+            }
+
+            #journalhhg56-wrapper .padding3rem {
+                padding: 3rem
+            }
+
+            #journalhhg56-wrapper .title-container {
+                height: auto;
+                min-height: unset;
+                max-height: 800px
+            }
+
+            #journalhhg56-wrapper .title-container .text {
+                max-width: 600px;
+                z-index: 2;
+                margin: 2rem 0;
+                text-align: left;
+                color: #fff;
+                width: 100%
+            }
+
+            #journalhhg56-wrapper .title-container .text h1 {
+                padding-top: 0
+            }
+
+            #journalhhg56-wrapper .title-container .text h1, #journalhhg56-wrapper .title-container .text p {
+                color: #fff !important;
+                text-align: left
+            }
+
+            #journalhhg56-wrapper .latest-edition {
+                display: flex;
+                flex-direction: column
+            }
+
+            #journalhhg56-wrapper .latest-edition h1, #journalhhg56-wrapper .latest-edition p {
+                color: #fff
+            }
+
+            @media (min-width: 768px) {
+                #journalhhg56-wrapper .title-container {
+                    height: auto
+                }
+
+                #journalhhg56-wrapper .title-container .text {
+                    width: 50%;
+                    margin: 6rem 0 0 0
+                }
+
+                #journalhhg56-wrapper .header-image img, #journalhhg56-wrapper .header-image picture {
+                    filter: brightness(0.7)
+                }
+
+                #journalhhg56-wrapper .latest-edition {
+                    flex-direction: row
+                }
+
+                #journalhhg56-wrapper .latest-edition > div {
+                    display: flex;
+                    width: 50%;
+                    padding: 2rem;
+                    flex-direction: column
+                }
+            }
+
+            #journalhhg56-wrapper .latest-edition picture, #journalhhg56-wrapper .latest-edition img {
+                width: 100%;
+                height: auto;
+                display: block;
+                position: relative;
+                margin: .5rem auto;
+                max-width: 340px
+            }
+
+            #journalhhg56-wrapper .latest-edition ul a {
+                font-size: 85%;
+                margin: 5px 0
+            }
+
+            #journalhhg56-wrapper .purchase-content {
+                display: flex;
+                flex-direction: column
+            }
+
+            #journalhhg56-wrapper .purchase-content .text {
+                width: 100%;
+                margin: 1rem 0
+            }
+
+            #journalhhg56-wrapper .purchase-content h2 {
+                color: #fff;
+                margin-bottom: 1rem
+            }
+
+            #journalhhg56-wrapper .purchase-content p {
+                color: #fff;
+                margin-bottom: 0
+            }
+
+            #journalhhg56-wrapper .purchase-content .order-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%
+            }
+
+            #journalhhg56-wrapper .purchase-content .order-container > div {
+                width: 100%
+            }
+
+            #journalhhg56-wrapper .purchase-content .button {
+                width: auto;
+                margin: 0 auto
+            }
+
+            .eway-button {
+                position: relative;
+                width: auto;
+                border-radius: 5px;
+                font-size: .9rem;
+                padding: 1.2rem 1.5rem;
+                border: solid 2px;
+                margin: 1rem auto 3rem auto;
+                text-transform: uppercase;
+                font-size: .8rem;
+                letter-spacing: .08rem;
+                text-decoration: none;
+                color: #fff;
+                border-color: #0069b4;
+                background-color: #0069b4;
+                transition: all .5s ease;
+                display: block;
+                font-weight: 500;
+                text-align: center;
+                white-space: normal;
+                vertical-align: middle
+            }
+
+            .eway-button span {
+                border: none;
+                font-family: montserrat !important;
+                box-shadow: none
+            }
+
+            .eway-button.processed {
+                position: relative;
+                width: auto;
+                border-radius: 5px;
+                font-size: .9rem;
+                padding: 1.2rem 1.5rem;
+                border: solid 2px;
+                margin: 1rem auto 3rem auto;
+                text-transform: uppercase;
+                font-size: .8rem;
+                letter-spacing: .08rem;
+                text-decoration: none;
+                color: #fff;
+                border-color: #27A200;
+                background-color: #27A200;
+                transition: all .5s ease;
+                display: block;
+                font-weight: 500;
+                text-align: center;
+                white-space: normal;
+                vertical-align: middle
+            }
+
+            .eway-button.processed span {
+                border: none;
+                font-family: montserrat !important;
+                box-shadow: none;
+                font-size: .8rem
+            }
+
+            @media (min-width: 768px) {
+                #journalhhg56-wrapper .purchase-content {
+                    flex-direction: row
+                }
+
+                #journalhhg56-wrapper .purchase-content .text {
+                    margin: 0 2rem 0 0
+                }
+
+                #journalhhg56-wrapper .purchase-content .order-container {
+                    display: flex;
+                    flex-direction: row
+                }
+
+                #journalhhg56-wrapper .purchase-content .order-container > div {
+                    width: 46%;
+                    margin: 0
+                }
+
+                #journalhhg56-wrapper .purchase-content .order-container > div:nth-of-type(1) {
+                    margin: 0 3rem 0 0
+                }
+
+                #journalhhg56-wrapper .purchase-content .order-container p {
+                    text-align: left
+                }
+
+                #journalhhg56-wrapper .purchase-content .button {
+                    width: auto;
+                    margin: 0 auto
+                }
+
+                .eway-button.processed, .eway-button {
+                    margin: 1rem auto 3rem 0
+                }
+            }
+
+            #journalhhg56-wrapper .contribute {
+                padding-bottom: 0;
+                padding-top: 0
+            }
+
+            /*// - map -- //*/
+            /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+            #map {
+                height: 80vh;
+                width: 100%;
+            }
+
+            @media(min-width: 768px){
+                #map {
+                    height: 500px;
+                    width: 100%;
+                }
+            }
+
+            </style>
+            <div id="journalhhg56-wrapper">
+                <picture class="header-image">
+                    <source media="(max-width: 767px)" sizes="(max-width: 767px) 100vw, 767px" srcset="
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_1_1,c_fill,g_auto__c_scale,w_190.jpg 190w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_1_1,c_fill,g_auto__c_scale,w_345.jpg 345w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_1_1,c_fill,g_auto__c_scale,w_470.jpg 470w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_1_1,c_fill,g_auto__c_scale,w_576.jpg 576w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_1_1,c_fill,g_auto__c_scale,w_675.jpg 675w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_1_1,c_fill,g_auto__c_scale,w_767.jpg 767w"></source>
+                    <source media="(min-width: 768px) and (max-width: 991px)" sizes="(max-width: 991px) 70vw, 694px"
+                            srcset="
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_538.jpg 538w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_677.jpg 677w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_694.jpg 694w"></source>
+                    <source media="(min-width: 992px) and (max-width: 1199px)" sizes="(max-width: 1200px) 60vw, 720px"
+                            srcset="
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_21_9,c_fill,g_auto__c_scale,w_596.jpg 596w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_21_9,c_fill,g_auto__c_scale,w_720.jpg 720w">
+                    <img sizes="(max-width: 4800px) 40vw, 1920px" srcset="
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_480.jpg 480w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_676.jpg 676w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_849.jpg 849w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_998.jpg 998w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1147.jpg 1147w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1270.jpg 1270w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1403.jpg 1403w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1531.jpg 1531w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1648.jpg 1648w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1761.jpg 1761w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1860.jpg 1860w,
+        https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1920.jpg 1920w"
+                         src="https://www.acc.edu.au/img/content-images/journals/academia/issue1/group-of-students-studying-at-the-table-7ASK9RN_cr3byf_ar_16_9,c_fill,g_auto__c_scale,w_1920.jpg"
+                         alt=""></source></picture>
+                <section class="title-container padding3rem maxWidth1200">
+                    <div class="text"><h1>Academica</h1>
+                        <p>Academica showcases the research, insights and work of teachers and leaders in the
+                            nation-wide Australian Christian College network of schools.</p></div>
+                </section>
+                <section class="section-one white-bkg padding3rem maxWidth1200">
+                    <div class="block-one">
+                        <div class="purpose"><p>The journal is intended to cover a broad range of topics such as
+                            Christian education, academic improvement, online education, character development, student
+                            and teacher wellbeing, professional educational issues and education technology.</p>
+                            <p>Academica’s content demonstrates the ACC school network’s commitment to pedagogical
+                                improvement, contemporary research and exemplary teaching practice.</p></div>
+                        <div class="contents"><p>Journal Contents:</p>
+                            <ul>
+                                <li>evidence-based educational research</li>
+                                <li>theoretical articles</li>
+                                <li>opinion pieces</li>
+                                <li>case studies</li>
+                                <li>event recounts</li>
+                                <li>alumni profiles</li>
+                                <li>book reviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-two grey1-bkg">
+                    <div class="latest-edition padding3rem maxWidth1200">
+                        <div style="text-align:center">
+                            <a
+                                    href="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-digital.pdf"
+                                    target="_blank">
+                                <picture>
+                                    <source media="(max-width: 767px)" sizes="(max-width: 1000px) 100vw, 1000px" srcset="
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_230.jpg 230w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_336.jpg 336w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_428.jpg 428w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_507.jpg 507w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_583.jpg 583w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_652.jpg 652w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_715.jpg 715w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_787.jpg 787w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_847.jpg 847w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_909.jpg 909w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_973.jpg 973w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_1000.jpg 1000w">
+                                    <img sizes="(max-width: 1111px) 90vw, 1000px" srcset="
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_692.jpg 692w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_762.jpg 762w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_830.jpg 830w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_884.jpg 884w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_948.jpg 948w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_993.jpg 993w,
+https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_1000.jpg 1000w"
+                                         src="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_1000.jpg"
+                                         alt=""></source></picture>
+                            </a>
+                            <p style="color:#646e78;font-size:80%"><i>Click the cover to view or download the entire
+                                journal</i></p></div>
+                        <div><h2>Latest Edition</h2>
+                            <p style="color:#646e78">This journal contains the following articles.<br><i>Make a
+                                selection from the list below:</i></p>
+                            <ul>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=4')"
+                                       target="_blank">Welcome to the inaugural edition of Academica</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=5')"
+                                       target="_blank">From the Editor</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=6')"
+                                       target="_blank">Modelling Learning: The Teacher as a Learner-Researcher</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=11')"
+                                       target="_blank">From country schoolboy to aspiring doctor</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=13')"
+                                       target="_blank">Leadership and online learning during the COVID-19 crisis:
+                                        Proactive or Reactive?</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=19')"
+                                       target="_blank">How does teaching online differ from on-campus teaching?</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=24')"
+                                       target="_blank">ACC RAISE: Based on Professor Homer Reed’s Three Laws of
+                                        Elementary Teaching (1927)</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=34')"
+                                       target="_blank">Battle Hymn of the Tiger Teachers: The Michaela Way</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=36')"
+                                       target="_blank">What Does A School Chaplain Do?</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=38')"
+                                       target="_blank">Pedal Prix Project: A Vehicle to Learning</a></li>
+                                <li>
+                                    <a onclick="logMyDownload('https://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf#page=43')"
+                                       target="_blank">Pedagogical Curriculum Knowledge: An exploratory concept for
+                                        teacher planning</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="padding3rem maxWidth800">
+                        <h2>Map of users who have downloaded this journal</h2>
+
+                        <p id="output"></p>
+
+
+                        <div id="map"></div>
+                        <div>
+                            <a class="eway-button" onclick="logMyDownload('http://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf')">Simulate Download</a>
+                        </div>
+                        <div>
+                            <button onclick="getGeoData()">Get Geo Data Dump</button>
+                        </div>
+                        <div>
+                            <button onclick="getGoogleJSONData()">Google GEO Data Dump</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="purchase grey6-bkg">
+                    <div class="purchase-content maxWidth1200 padding3rem">
+                        <div class="text"><h2>Purchase your hard copy</h2>
+                            <p>Limited numbers of the journal are printed in hard copy for purchase. Select from either
+                                domestic or international postage options below.</p>
+                            <p>&nbsp;</p>
+                            <div class="order-container">
+                                <div class=""><p>To purchase a copy of Vol. 1, 2020 within Australia, click the button
+                                    below. Price includes postage. After we have received payment you will be contacted
+                                    for a delivery address.</p>
+                                    <script src="https://secure.ewaypayments.com/scripts/eCrypt.min.js"
+                                            class="eway-paynow-button"
+                                            data-publicapikey="epk-1AC47BBD-DED0-43DF-89C6-651DB05DAE07"
+                                            data-buttoncolor="#0069B4" data-amount="1700" data-label="ORDER NOW"
+                                            data-invoiceref="academica01AUS" data-invoicedescription="Academica Journal"
+                                            data-allowedit="true" data-currency="AUD"></script>
+                                </div>
+                                <div class=""><p>To purchase a copy of Vol. 1, 2020 within Australia, click the button
+                                    below. Price includes postage. After we have received payment you will be contacted
+                                    for a delivery address.</p>
+                                    <script src="https://secure.ewaypayments.com/scripts/eCrypt.min.js"
+                                            class="eway-paynow-button"
+                                            data-publicapikey="epk-1AC47BBD-DED0-43DF-89C6-651DB05DAE07"
+                                            data-buttoncolor="#0069B4" data-amount="3500" data-label="ORDER NOW"
+                                            data-invoiceref="academica01INT" data-invoicedescription="Academica Journal"
+                                            data-allowedit="true" data-currency="AUD"></script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="contribute white-bkg">
+                    <div class="maxWidth1200 padding3rem"><h2>Are you keen to contribute?</h2>
+                        <p>Download the <a target="_blank" style="color:#0069B4"
+                                           href="https://drive.google.com/file/d/1uBBIE5MhRysbmjCJG1D2kTTSouwdJTO_/view?usp=sharing">Contributor
+                            Guidelines</a> to learn how.</p></div>
+                </section>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </section>
+</main>
+<footer id="footermodern" class="eGuides-gallery">
+    <div class="top-bar">
+        <div class="container">
+            <div class="column">
+                <div class="logo"><a title="ACC Moreton Logo" class="animate-link"
+                                     href="https://www.acc.edu.au/moreton/index.html">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                         xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="100%"
+                         height="100%" viewBox="0 0 447.8 111.1" style="enable-background:new 0 0 447.8 111.1;"
+                         xml:space="preserve">
+    <style type="text/css">
+    .white-fill {
+        fill: #FFFFFF;
+    }
+
+    .acc-logo1 {
+        fill: url(#SVGID_1_);
+    }
+
+    .acc-logo2 {
+        fill: url(#SVGID_2_);
+    }
+
+    .acc-logo3 {
+        fill: #A1A2A1;
+    }
+
+    .acc-logo4 {
+        fill: url(#SVGID_3_);
+    }
+
+    .acc-logo5 {
+        fill: url(#SVGID_4_);
+    }
+    </style>
+
+                        <g>
+        <g>
+            <g>
+                <path class="white-fill" d="M100.1,11.1C90.2,5.8,76.2,0.7,50.7,0.7c-24.6,0-37.5,4.5-49.4,10.3c-1.1,0.6-1.5,42.5,9.9,64.8
+                    c12.1,23.5,28.5,29.8,39.5,34.5c11-4.7,27.4-10.9,39.5-34.5C101.6,53.6,101.2,11.7,100.1,11.1z"/>
+                <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="19.3486" y1="-3.5158" x2="88.0687"
+                                y2="87.4063">
+                    <stop offset="0" style="stop-color:#3265AD"/>
+                    <stop offset="0.1524" style="stop-color:#2F5EA3"/>
+                    <stop offset="1" style="stop-color:#1D3561"/>
+                </linearGradient>
+                <path class="acc-logo1" d="M50.7,111.1l-1.5-0.6C38.5,106,22.3,99.1,10.5,76.2C-0.6,54.4-0.6,14.3,0.5,11c0-0.1,0.1-0.5,0.5-0.6
+                    C14,4,26.9,0,50.7,0c26.8,0,40.7,5.6,49.7,10.4c1.5,0.8,0.9,16.4,0.1,25c-1.1,12-3.6,28.9-9.7,40.8C79,99.1,62.8,106,52.1,110.5
+                    L50.7,111.1z M1.8,11.6c-0.8,3.2-1.1,42.3,10,63.9c11.5,22.5,26.8,28.9,37.9,33.6l0.9,0.4l0.9-0.4C62.7,104.4,78,98,89.5,75.5
+                    c11.1-21.6,10.8-60.8,10-63.9C90.6,6.9,77,1.5,50.7,1.5C27.3,1.5,14.6,5.3,1.8,11.6z"/>
+            </g>
+            <g>
+                <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="23.7668" y1="3.2066" x2="84.8036"
+                                y2="83.9629">
+                    <stop offset="0" style="stop-color:#3265AD"/>
+                    <stop offset="0.1524" style="stop-color:#2F5EA3"/>
+                    <stop offset="1" style="stop-color:#1D3561"/>
+                </linearGradient>
+                <path class="acc-logo2" d="M97.6,13.3c-9.4-5-22.7-9.8-46.9-9.8c-23.4,0-35.6,4.2-46.9,9.8c-1.1,0.5-1.4,40.3,9.4,61.5
+                    c11.4,22.3,27.1,28.3,37.5,32.7c10.4-4.4,26-10.4,37.5-32.7C99,53.7,98.6,13.9,97.6,13.3z M27,61.2c0,0-0.7-8.1-0.5-9.4
+                    c1.9-9.3,45.3-13,58.9-13.6C85.4,38.3,32.3,46.9,27,61.2z M26.1,47c0,0-0.9-7.1,1.1-8.3c3.9-2.4,39-5.3,61.9-1.8
+                    C89.1,36.9,31.8,37.6,26.1,47z M23.7,35.5c0,13.1,1.6,31.7,7.4,56.7c0,0-8.8-19.1-9.7-55.3c0-0.3,0-0.7,0-1
+                    c-6.6,1.1-9.8,2-10.3,1.4c-1.1-1.5-7-3.7,10.2-5.2C20.7,1.4,23.1,9,25,10.2c1,0.6-0.9,7.4-1.2,21.7c3.6-0.3,8-0.5,13.5-0.7
+                    c35.2-1.3,56,4.5,56,4.5C58.3,31.4,36.1,33.5,23.7,35.5z"/>
+            </g>
+            <g>
+                <path class="acc-logo3"
+                      d="M27,61.2c0,0-0.3-3-0.4-5.7c-0.1-1.7,8.3-9.7,58.8-17.3C85.4,38.3,32.3,46.9,27,61.2z"/>
+                <path class="acc-logo3"
+                      d="M26.1,47c0,0-0.1-1.1-0.2-2.5c-0.1-2.2,19.5-8,63.2-7.6C89.1,36.9,31.8,37.6,26.1,47z"/>
+            </g>
+        </g>
+                            <g class="">
+        <g>
+            <path class="white-fill" d="M141.7,49.4l-3.2-7.6h-17.6l-3.2,7.6h-7.2l15.8-36.1h7.2l15.6,36.1H141.7z M123.3,35.8H136l-6.3-15.1
+                L123.3,35.8z"/>
+            <path class="white-fill" d="M161.5,41.2c1.6,1.6,3.8,2.4,6.5,2.4c2.7,0,4.8-0.8,6.4-2.4c1.6-1.6,2.3-3.8,2.3-6.7V13.3h6.9v21.2
+                c0,3.1-0.6,5.8-1.9,8.2c-1.3,2.3-3.1,4.1-5.4,5.3c-2.4,1.2-5.1,1.9-8.3,1.9c-3.2,0-6-0.6-8.4-1.9c-2.4-1.2-4.2-3-5.5-5.3
+                c-1.3-2.3-1.9-5-1.9-8.2V13.3h6.9v21.2C159.1,37.4,159.9,39.6,161.5,41.2z"/>
+            <path class="white-fill" d="M209.3,20c-1.9-0.6-3.6-0.9-5.1-0.9c-1.6,0-3,0.3-3.9,0.9c-1,0.6-1.4,1.5-1.4,2.6c0,1,0.3,1.8,1,2.5
+                c0.7,0.7,1.5,1.2,2.5,1.6c1,0.4,2.4,0.9,4.1,1.4c2.4,0.7,4.4,1.4,6,2.2c1.6,0.7,2.9,1.8,4,3.2c1.1,1.4,1.6,3.3,1.6,5.6
+                c0,2.2-0.6,4.1-1.8,5.7c-1.2,1.6-2.8,2.9-4.9,3.7c-2.1,0.9-4.5,1.3-7.1,1.3c-2.8,0-5.6-0.5-8.2-1.6c-2.7-1-5-2.4-7-4.2l2.9-5.9
+                c1.8,1.7,3.9,3,6.1,4c2.3,1,4.4,1.4,6.3,1.4c1.9,0,3.4-0.4,4.5-1.1c1.1-0.7,1.6-1.7,1.6-3c0-1-0.3-1.9-1-2.5
+                c-0.7-0.7-1.5-1.2-2.5-1.6c-1-0.4-2.4-0.9-4.2-1.4c-2.4-0.7-4.4-1.4-6-2.1c-1.5-0.7-2.9-1.7-4-3.1c-1.1-1.4-1.6-3.2-1.6-5.5
+                c0-2.1,0.6-3.9,1.7-5.5c1.1-1.6,2.7-2.8,4.7-3.6c2-0.9,4.4-1.3,7.1-1.3c2.3,0,4.6,0.3,6.9,1c2.3,0.7,4.3,1.6,6.1,2.8l-2.8,6
+                C213.1,21.5,211.2,20.6,209.3,20z"/>
+            <path class="white-fill" d="M221.1,13.3h29.4v6.1h-11.2v29.9h-7V19.5h-11.2V13.3z"/>
+            <path class="white-fill" d="M278.4,49.4l-6.2-10.7c-0.3,0-0.7,0.1-1.3,0.1h-8.1v10.6h-6.9V13.3h15c4.7,0,8.3,1.1,10.8,3.2
+                c2.5,2.2,3.8,5.2,3.8,9.2c0,2.8-0.6,5.2-1.8,7.2c-1.2,2-3,3.5-5.3,4.5l7.9,11.9H278.4z M262.7,32.7h8.1c2.6,0,4.6-0.6,6-1.7
+                c1.4-1.1,2.1-2.8,2.1-5c0-2.2-0.7-3.8-2.1-4.9c-1.4-1.1-3.4-1.6-6-1.6h-8.1V32.7z"/>
+            <path class="white-fill" d="M320.2,49.4l-3.2-7.6h-17.6l-3.2,7.6h-7.2l15.8-36.1h7.2l15.6,36.1H320.2z M301.9,35.8h12.7l-6.3-15.1
+                L301.9,35.8z"/>
+            <path class="white-fill" d="M332.5,13.3h6.9v29.8h15.6v6.2h-22.5V13.3z"/>
+            <path class="white-fill" d="M360.8,13.3h6.9v36.1h-6.9V13.3z"/>
+            <path class="white-fill" d="M403.7,49.4l-3.2-7.6h-17.6l-3.2,7.6h-7.2l15.8-36.1h7.2l15.6,36.1H403.7z M385.4,35.8H398l-6.3-15.1
+                L385.4,35.8z"/>
+            <path class="white-fill" d="M440.8,13.5h6.6v35.7H441l-18.3-24.6v24.6H416V13.5h6.5l18.4,24.6V13.5z"/>
+        </g>
+                                <g>
+            <path class="white-fill" d="M125.8,62.1c-1-0.5-2.1-0.8-3.1-0.8c-1.3,0-2.4,0.3-3.5,0.9c-1.1,0.6-1.9,1.5-2.5,2.6s-0.9,2.3-0.9,3.6
+                s0.3,2.5,0.9,3.6s1.4,1.9,2.5,2.6c1.1,0.6,2.2,1,3.5,1c1,0,2-0.2,3.1-0.7c1-0.5,2-1.1,2.8-2l3,3.3c-1.2,1.2-2.6,2.2-4.2,3
+                c-1.6,0.7-3.3,1.1-4.9,1.1c-2.2,0-4.2-0.5-6-1.5c-1.8-1-3.2-2.4-4.3-4.2c-1-1.8-1.5-3.8-1.5-6c0-2.2,0.5-4.1,1.6-5.9
+                s2.5-3.2,4.3-4.2c1.8-1,3.9-1.5,6.1-1.5c1.6,0,3.2,0.3,4.8,1s2.9,1.6,4.1,2.8l-3,3.6C127.7,63.3,126.8,62.6,125.8,62.1z"/>
+                                    <path class="white-fill"
+                                          d="M134.5,57.2h5.1v9.4h10.2v-9.4h5.1v22.6h-5.1v-8.9h-10.2v8.9h-5.1V57.2z"/>
+                                    <path class="white-fill" d="M173.8,79.8l-3.6-6.5h-0.5H165v6.5h-5.1V57.2h9.8c2.9,0,5.2,0.7,6.8,2c1.6,1.4,2.4,3.3,2.4,5.8
+                c0,1.7-0.4,3.2-1.1,4.5c-0.7,1.2-1.8,2.2-3.1,2.8l4.8,7.5H173.8z M165,69.1h4.7c1.4,0,2.5-0.3,3.3-1c0.8-0.7,1.1-1.6,1.1-2.9
+                c0-1.2-0.4-2.2-1.1-2.8c-0.8-0.6-1.9-1-3.3-1H165V69.1z"/>
+                                    <path class="white-fill" d="M183.3,57.2h5.1v22.6h-5.1V57.2z"/>
+                                    <path class="white-fill" d="M204.6,61.8c-1.3-0.4-2.4-0.6-3.3-0.6c-0.9,0-1.6,0.2-2.1,0.5c-0.5,0.3-0.8,0.8-0.8,1.4
+                c0,0.8,0.4,1.4,1.1,1.8c0.7,0.4,1.9,0.9,3.4,1.3s2.8,0.9,3.8,1.4c1,0.5,1.9,1.1,2.6,2c0.7,0.9,1.1,2.1,1.1,3.6
+                c0,1.4-0.4,2.7-1.1,3.7c-0.8,1-1.8,1.8-3.1,2.4c-1.3,0.5-2.9,0.8-4.6,0.8c-1.8,0-3.6-0.3-5.4-1s-3.3-1.5-4.6-2.6l2-4.2
+                c1.1,1,2.5,1.9,3.9,2.5c1.5,0.6,2.8,0.9,4.1,0.9c1.1,0,1.9-0.2,2.5-0.6c0.6-0.4,0.9-0.9,0.9-1.7c0-0.6-0.2-1.1-0.6-1.4
+                s-0.9-0.7-1.5-0.9c-0.6-0.2-1.5-0.5-2.5-0.8c-1.5-0.4-2.8-0.9-3.8-1.3s-1.8-1.1-2.5-2c-0.7-0.9-1.1-2.1-1.1-3.5
+                c0-1.4,0.4-2.5,1.1-3.6c0.7-1,1.8-1.8,3.1-2.4c1.3-0.5,2.8-0.8,4.6-0.8c1.5,0,3.1,0.2,4.6,0.7c1.5,0.5,2.8,1.1,4,1.8l-2,4.2
+                C207.1,62.8,205.9,62.2,204.6,61.8z"/>
+                                    <path class="white-fill" d="M211.7,57.2h18.9v4.3h-6.9v18.3h-5.1V61.5h-6.9V57.2z"/>
+                                    <path class="white-fill" d="M233.4,57.2h5.1v22.6h-5.1V57.2z"/>
+                                    <path class="white-fill" d="M260.2,79.8l-1.8-4.4h-10.5l-1.8,4.4h-5.3l9.8-22.6h5.3l9.7,22.6H260.2z M249.6,71.3h7.1l-3.6-8.8
+                L249.6,71.3z"/>
+                                    <path class="white-fill"
+                                          d="M283.6,57.2h4.8v22.6h-4.6l-10.9-14.5v14.5H268V57.2h4.6l11,14.6V57.2z"/>
+                                    <path class="white-fill" d="M314.6,62.1c-1-0.5-2.1-0.8-3.1-0.8c-1.3,0-2.4,0.3-3.5,0.9c-1.1,0.6-1.9,1.5-2.5,2.6s-0.9,2.3-0.9,3.6
+                s0.3,2.5,0.9,3.6s1.4,1.9,2.5,2.6c1.1,0.6,2.2,1,3.5,1c1,0,2-0.2,3.1-0.7c1-0.5,2-1.1,2.8-2l3,3.3c-1.2,1.2-2.6,2.2-4.2,3
+                c-1.6,0.7-3.3,1.1-4.9,1.1c-2.2,0-4.2-0.5-6-1.5c-1.8-1-3.2-2.4-4.3-4.2c-1-1.8-1.5-3.8-1.5-6c0-2.2,0.5-4.1,1.6-5.9
+                s2.5-3.2,4.3-4.2c1.8-1,3.9-1.5,6.1-1.5c1.6,0,3.2,0.3,4.8,1s2.9,1.6,4.1,2.8l-3,3.6C316.6,63.3,315.6,62.6,314.6,62.1z"/>
+                                    <path class="white-fill" d="M339.6,58.3c1.9,1,3.3,2.4,4.4,4.2s1.6,3.8,1.6,5.9s-0.5,4.2-1.6,5.9c-1.1,1.8-2.5,3.2-4.4,4.2
+                c-1.9,1-3.9,1.5-6.2,1.5s-4.3-0.5-6.2-1.5c-1.9-1-3.3-2.4-4.4-4.2s-1.6-3.8-1.6-6c0-2.2,0.5-4.1,1.6-5.9s2.5-3.2,4.4-4.2
+                c1.8-1,3.9-1.5,6.2-1.5C335.7,56.8,337.8,57.3,339.6,58.3z M330.1,62.2c-1.1,0.6-1.9,1.5-2.6,2.6s-0.9,2.3-0.9,3.6
+                c0,1.3,0.3,2.6,1,3.6c0.6,1.1,1.5,2,2.5,2.6c1.1,0.6,2.2,1,3.5,1s2.4-0.3,3.4-1c1-0.6,1.9-1.5,2.5-2.6s0.9-2.3,0.9-3.7
+                c0-1.3-0.3-2.5-0.9-3.6s-1.4-2-2.5-2.6c-1-0.6-2.2-1-3.4-1S331.1,61.6,330.1,62.2z"/>
+                                    <path class="white-fill" d="M349,57.2h5.1v18.1h9.7v4.5H349V57.2z"/>
+                                    <path class="white-fill" d="M366.8,57.2h5.1v18.1h9.7v4.5h-14.8V57.2z"/>
+                                    <path class="white-fill"
+                                          d="M384.6,57.2h17.2v4.2h-12.1v4.9h10.9v4.2h-10.9v5h12.5v4.2h-17.6V57.2z"/>
+                                    <path class="white-fill"
+                                          d="M430.2,57.2h17.2v4.2h-12.1v4.9h10.9v4.2h-10.9v5h12.5v4.2h-17.6V57.2z"/>
+                                    <path class="white-fill" d="M413.3,62.2c1.1-0.6,2.3-1,3.6-1c1.1,0,2.2,0.2,3.3,0.7c1.1,0.5,2.1,1.1,2.9,1.9l2.9-3.6
+                c-1.2-1-2.5-1.9-4.1-2.5s-3.2-0.9-4.9-0.9c-2.3,0-4.4,0.5-6.3,1.5c-1.9,1-3.4,2.4-4.4,4.2s-1.6,3.8-1.6,5.9c0,2.2,0.5,4.2,1.6,6
+                s2.5,3.2,4.3,4.2c1.8,1,3.9,1.5,6.1,1.5c1.5,0,3.2-0.3,4.8-0.8s3.1-1.3,4.3-2.1v-8.8l0-2.1l-10.7,0v4.2h6.2v3.9
+                c-0.7,0.4-1.5,0.7-2.3,0.9c-0.8,0.2-1.5,0.3-2.2,0.3c-1.3,0-2.5-0.3-3.6-1c-1.1-0.6-1.9-1.5-2.6-2.6s-1-2.3-1-3.7
+                c0-1.3,0.3-2.5,0.9-3.6C411.3,63.7,412.2,62.9,413.3,62.2z"/>
+        </g>
+    </g>
+    </g>
+    </svg>
+                </a></div>
+                <p><em>Transforming young lives spiritually, academically, socially and physically.</em></p></div>
+            <div class="column schools">
+                <div class="contact-wrapper"><h2>Schools</h2>
+                    <ul class="list">
+                        <li><a target="_blank" href="https://www.acc.edu.au/moreton/index.html">Moreton, QLD</a></li>
+                        <li><a target="_blank" href="https://www.acc.edu.au/singleton/index.html">Singleton, NSW</a>
+                        </li>
+                        <li><a target="_blank" href="https://brightwaterschristiancollege.com.au/">Brightwaters, NSW</a>
+                        </li>
+                        <li><a target="_blank" href="https://www.acc.edu.au/marsdenpark/index.html">Marsden Park,
+                            NSW</a></li>
+                        <li><a target="_blank" href="https://www.acc.edu.au/hume/index.html">Hume, VIC</a></li>
+                        <li><a target="_blank" href="https://www.acc.edu.au/darlingdowns/index.html">Darling Downs,
+                            WA</a></li>
+                        <li><a target="_blank" href="https://www.acc.edu.au/southlands/index.html">Southlands, WA</a>
+                        </li>
+                        <li><a target="_blank" href="https://www.acc.edu.au/burnie/index.html">Burnie, TAS</a></li>
+                        <li><a target="_blank" href="https://www.acc.edu.au/launceston/index.html">Launceston, TAS</a>
+                        </li>
+                        <li><a target="_blank" href="https://www.acc.edu.au/hobart/index.html">Hobart, TAS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column column-wide blog"><h2><a href="https://www.acc.edu.au/blog/" target="_blank">ACC Blog</a>
+            </h2>
+                <div><h4 class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/school-choices-for-australian-parents/" target="_blank">School
+                    Choices for Australian Parents</a></h4><h4 class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/defeating-cyberbullying-a-guide-for-families/"
+                        target="_blank">Defeating cyberbullying – a guide for families</a></h4><h4
+                        class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/everything-you-need-to-know-about-online-school/"
+                        target="_blank">Everything you need to know about online school</a></h4><h4
+                        class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/cultivating-positive-behaviour-in-children/" target="_blank">Cultivating
+                    positive behaviour and wellbeing in children</a></h4><h4 class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/technology-improves-student-engagement/" target="_blank">How
+                    education technology improves student engagement</a></h4><h4 class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/time-management-skills-student-learning/" target="_blank">Time
+                    management skills that improve student learning</a></h4><h4 class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/raising-responsible-digital-citizens/" target="_blank">Raising
+                    responsible digital citizens</a></h4><h4 class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/student-wellbeing-really-matters/" target="_blank">Student
+                    wellbeing really matters</a></h4><h4 class="feed-item-title"><a
+                        href="https://www.acc.edu.au/blog/developing-personal-character/" target="_blank">Developing
+                    personal character in students</a></h4>
+                    <p><a href="https://www.acc.edu.au/blog/">See more Blog posts</a></p></div>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <div class="container">
+                <p>&copy;&nbsp;Australian Christian College&nbsp;<script>document.write((new Date).getFullYear());</script>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                        href="/privacy-statement.html" target="_blank">Privacy Statement</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                        href="/sitemap.html">Sitemap</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,500,600" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://www.acc.edu.au/js/plugins.js"></script>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "EducationalOrganization",
+    "legalName": "Australian Christian College",
+    "url": "https://www.acc.edu.au",
+    "logo": "https://www.acc.edu.auhttps://www.acc.edu.au/img/ACC-Logo_ACC_Generic-H-Black.jpg"
+}</script>
+</body>
+</html>

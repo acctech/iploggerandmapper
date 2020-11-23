@@ -16,14 +16,14 @@ function getIP(){
     return JSON.parse(httpGet("https://api.ipify.org/?format=json")).ip;
 }
 
-function logMyDownload(){
+function logMyDownload(pdfURL){
     let ip = getIP();
     log(ip);
     let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?ip=" + ip)).body;
     log(responseBody);
 
     // Let the user get the download here //
-    alert("Thank you");
+    window.open(pdfURL, "_blank");
 }
 
 function getGeoData(){

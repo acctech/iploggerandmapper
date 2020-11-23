@@ -40,7 +40,8 @@
             map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 3,
                 center: new google.maps.LatLng(-25.274398, 133.775136),
-                mapId: "d7b42814bf968e06"
+                mapId: "d7b42814bf968e06",
+                disableDefaultUI: true
             });
 
             function httpGet(theUrl)
@@ -75,7 +76,7 @@
 <h1>Console Output</h1>
 <p id="output"></p>
 <div>
-    <button onclick="logMyDownload()">Simulate Download</button>
+    <button onclick="logMyDownload('http://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf')">Simulate Download</button>
 </div>
 <div>
     <button onclick="getGeoData()">Get Geo Data Dump</button>

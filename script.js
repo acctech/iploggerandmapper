@@ -8,7 +8,7 @@ function httpGet(theUrl)
 
 function log(output){
     let p = document.getElementById("output");
-    p.innerText += "\n" + output;
+    p.innerText += "\n\n" + output;
     console.log(output);
 }
 

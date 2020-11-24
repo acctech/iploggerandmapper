@@ -1,3 +1,5 @@
+<!--Style the google map here: https://console.cloud.google.com/google/maps-apis/client/styles/fc46d5356327f576/edit?organizationId=579215871002&project=accmaps&supportedpurview=project-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,50 +36,9 @@
     }(window, document, "script", "dataLayer", "GTM-WMFPBV");</script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap"
-            defer>
-    </script>
-    <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap" defer></script>
 
-    <script>
-        let map;
 
-        function initMap() {
-
-            map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 3,
-                center: new google.maps.LatLng(-25.274398, 133.775136),
-                mapId: "d7b42814bf968e06",
-                disableDefaultUI: true
-            });
-
-            function httpGet(theUrl)
-            {
-                var xmlHttp = new XMLHttpRequest();
-                xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-                xmlHttp.send( null );
-                return xmlHttp.responseText;
-            }
-            let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1"));
-            eqfeed_callback(responseBody);
-
-        }
-
-        // Loop through the results array and place a marker for each
-        // set of coordinates.
-        const eqfeed_callback = function (results) {
-            for (let i = 0; i < results.features.length; i++) {
-                const coords = results.features[i].geometry.coordinates;
-                const latLng = new google.maps.LatLng(coords[1], coords[0]);
-                new google.maps.Marker({
-                    position: latLng,
-                    map: map,
-                });
-            }
-        };
-    </script>
 </head>
 <body itemscope itemtype="//schema.org/EducationalOrganization" class="internal-page-container wrapper"
       id="eGuides-gallery"><!--[if lte IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong>
@@ -618,20 +579,14 @@ https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica
                     <div class="padding3rem maxWidth800">
                         <h2>Map of users who have downloaded this journal</h2>
 
-                        <p id="output"></p>
-
-
+                        <div id="userDownloadedLocation"></div>
                         <div id="map"></div>
-                        <div>
-                            <a class="eway-button" onclick="logMyDownload('http://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf')">Simulate Download</a>
-                        </div>
-                        <div>
-                            <button onclick="getGeoData()">Get Geo Data Dump</button>
-                        </div>
-                        <div>
-                            <button onclick="getGoogleJSONData()">Google GEO Data Dump</button>
-                        </div>
+                        <p>ACC Journals have been downloaded
+                            <span id="counter">this many</span>
+                        </p>
+
                     </div>
+
                 </section>
                 <section class="purchase grey6-bkg">
                     <div class="purchase-content maxWidth1200 padding3rem">
@@ -892,5 +847,72 @@ https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica
     "url": "https://www.acc.edu.au",
     "logo": "https://www.acc.edu.auhttps://www.acc.edu.au/img/ACC-Logo_ACC_Generic-H-Black.jpg"
 }</script>
+<script src="./script.js"></script>
+
+<script>
+    let map;
+
+    function initMap() {
+
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 3,
+            center: new google.maps.LatLng(-25.274398, 133.775136),
+            mapId: "d7b42814bf968e06",
+            disableDefaultUI: true,
+            useStaticMap: true,
+        });
+
+        function httpGet(theUrl)
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+            xmlHttp.send( null );
+            return xmlHttp.responseText;
+        }
+        let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1"));
+        eqfeed_callback(responseBody);
+
+
+    }
+
+    function drop() {
+        for (var i =0; i < markerArray.length; i++) {
+            setTimeout(function() {
+                addMarkerMethod();
+            }, i * 2000);
+        }
+    }
+
+    // Loop through the results array and place a marker for each
+    // set of coordinates.
+    const eqfeed_callback = function (results) {
+        for (let i = 0; i < results.features.length; i++) {
+            const coords = results.features[i].geometry.coordinates;
+            const latLng = new google.maps.LatLng(coords[1], coords[0]);
+            setTimeout(function() {
+                new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 3,
+                    },
+                });
+            }, i * 2000);
+        }
+    };
+
+    // total download counter
+    let counterElement = document.getElementById("counter");
+    let counter = getDownloadCounter();
+    let counterSuffix = "time";
+    if (counter > 1){
+        counterSuffix = counterSuffix + "s";
+    }
+    counterElement.textContent = counter + " " + counterSuffix;
+    console.log(counterElement.textContent)
+</script>
 </body>
+
 </html>

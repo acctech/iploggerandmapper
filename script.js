@@ -48,4 +48,3 @@ function iterateOverDownloads(){
     return responseBody;
 }
 
-log("...");

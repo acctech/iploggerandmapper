@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <!--Style the google map here: https://console.cloud.google.com/google/maps-apis/client/styles/fc46d5356327f576/edit?organizationId=579215871002&project=accmaps&supportedpurview=project-->
-
-=======
->>>>>>> main
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,56 +35,8 @@
     }(window, document, "script", "dataLayer", "GTM-WMFPBV");</script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<<<<<<< HEAD
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap" defer></script>
 
-
-=======
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap"
-            defer>
-    </script>
-    <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap">
-    </script>
-
-    <script>
-        let map;
-
-        function initMap() {
-
-            map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 3,
-                center: new google.maps.LatLng(-25.274398, 133.775136),
-                mapId: "d7b42814bf968e06",
-                disableDefaultUI: true
-            });
-
-            function httpGet(theUrl)
-            {
-                var xmlHttp = new XMLHttpRequest();
-                xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-                xmlHttp.send( null );
-                return xmlHttp.responseText;
-            }
-            let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1"));
-            eqfeed_callback(responseBody);
-
-        }
-
-        // Loop through the results array and place a marker for each
-        // set of coordinates.
-        const eqfeed_callback = function (results) {
-            for (let i = 0; i < results.features.length; i++) {
-                const coords = results.features[i].geometry.coordinates;
-                const latLng = new google.maps.LatLng(coords[1], coords[0]);
-                new google.maps.Marker({
-                    position: latLng,
-                    map: map,
-                });
-            }
-        };
-    </script>
->>>>>>> main
 </head>
 <body itemscope itemtype="//schema.org/EducationalOrganization" class="internal-page-container wrapper"
       id="eGuides-gallery"><!--[if lte IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong>
@@ -474,11 +422,7 @@
                 padding-top: 0
             }
 
-<<<<<<< HEAD
-            /*// - map -- //*/
-=======
-                /*// - map -- //*/
->>>>>>> main
+
             /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
             #map {
@@ -486,21 +430,12 @@
                 width: 100%;
             }
 
-<<<<<<< HEAD
-            @media(min-width: 768px){
-                #map {
-                    height: 500px;
-                    width: 100%;
-                }
-            }
-=======
                 @media(min-width: 768px){
                     #map {
                         height: 500px;
                         width: 100%;
                     }
                 }
->>>>>>> main
 
             </style>
             <div id="journalhhg56-wrapper">
@@ -564,18 +499,10 @@
                 <section class="section-two grey1-bkg">
                     <div class="latest-edition padding3rem maxWidth1200">
                         <div style="text-align:center">
-                            <a
-<<<<<<< HEAD
-                                    href="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-digital.pdf"
+                            <a href="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-digital.pdf"
                                     target="_blank">
                                 <picture>
                                     <source media="(max-width: 767px)" sizes="(max-width: 1000px) 100vw, 1000px" srcset="
-=======
-                                href="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-digital.pdf"
-                                target="_blank">
-                            <picture>
-                                <source media="(max-width: 767px)" sizes="(max-width: 1000px) 100vw, 1000px" srcset="
->>>>>>> main
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_230.jpg 230w,
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_336.jpg 336w,
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_428.jpg 428w,
@@ -588,11 +515,8 @@ https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_909.jpg 909w,
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_973.jpg 973w,
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_1000.jpg 1000w">
-<<<<<<< HEAD
-                                    <img sizes="(max-width: 1111px) 90vw, 1000px" srcset="
-=======
-                                <img sizes="(max-width: 1111px) 90vw, 1000px" srcset="
->>>>>>> main
+
+                                   <img sizes="(max-width: 1111px) 90vw, 1000px" srcset="
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_692.jpg 692w,
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_762.jpg 762w,
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_830.jpg 830w,
@@ -600,15 +524,10 @@ https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_948.jpg 948w,
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_993.jpg 993w,
 https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_1000.jpg 1000w"
-<<<<<<< HEAD
-                                         src="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_1000.jpg"
-                                         alt=""></source></picture>
-                            </a>
-=======
-                                     src="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_1000.jpg"
+src="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica-Vol-1-cover_dpkduu_c_scale,w_1000.jpg"
                                      alt=""></source></picture>
                         </a>
->>>>>>> main
+
                             <p style="color:#646e78;font-size:80%"><i>Click the cover to view or download the entire
                                 journal</i></p></div>
                         <div><h2>Latest Edition</h2>
@@ -659,7 +578,6 @@ https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica
                     <div class="padding3rem maxWidth800">
                         <h2>Map of users who have downloaded this journal</h2>
 
-<<<<<<< HEAD
                         <div id="userDownloadedLocation"></div>
                         <div id="map"></div>
                         <p>ACC Journals have been downloaded
@@ -667,23 +585,6 @@ https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica
                         </p>
 
                     </div>
-
-=======
-                        <p id="output"></p>
-
-
-                        <div id="map"></div>
-                    <div>
-                        <a class="eway-button" onclick="logMyDownload('http://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf')">Simulate Download</a>
-                    </div>
-                    <div>
-                        <button onclick="getGeoData()">Get Geo Data Dump</button>
-                    </div>
-                    <div>
-                        <button onclick="getGoogleJSONData()">Google GEO Data Dump</button>
-                    </div>
-                    </div>
->>>>>>> main
                 </section>
                 <section class="purchase grey6-bkg">
                     <div class="purchase-content maxWidth1200 padding3rem">
@@ -944,7 +845,6 @@ https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica
     "url": "https://www.acc.edu.au",
     "logo": "https://www.acc.edu.auhttps://www.acc.edu.au/img/ACC-Logo_ACC_Generic-H-Black.jpg"
 }</script>
-<<<<<<< HEAD
 <script src="./script.js"></script>
 
 <script>
@@ -1013,7 +913,4 @@ https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Academica
 </script>
 </body>
 
-=======
-</body>
->>>>>>> main
 </html>

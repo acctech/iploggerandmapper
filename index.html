@@ -98,8 +98,21 @@
     let counter = document.getElementById("counter");
     counter.innerText = getDownloadCounter();
 
-    let userNotificationDiv = document.getElementById("userDownloadsNotification");
-    userNotificationDiv.innerText = typeof iterateOverDownloads();
+    function scrollThroughUserLocations(){
+        let userNotificationDiv = document.getElementById("userDownloadsNotification");
+        let arrayOfLocations = JSON.parse(iterateOverDownloads());
+        let indexVariable = 0;
+        function moveOntoNextLocation(){
+            if(indexVariable < arrayOfLocations.length) {
+                userNotificationDiv.innerText = "User Downloaded From: " + (indexVariable + 1) + " " + arrayOfLocations[indexVariable].city;
+                setTimeout(moveOntoNextLocation, 2000);
+            }
+            indexVariable++;
+        }
+        moveOntoNextLocation();
+    }
+
+    scrollThroughUserLocations();
 </script>
 
 </html>

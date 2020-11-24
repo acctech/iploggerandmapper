@@ -84,6 +84,7 @@
 <div>
     <button onclick="getGoogleJSONData()">Google GEO Data Dump</button>
 </div>
+<div id="userDownloadsNotification"></div>
 <h1>Map of Users who have reported their IP</h1>
 <div id="map"></div>
 <h2>Downloads</h2>
@@ -96,6 +97,9 @@
 <script>
     let counter = document.getElementById("counter");
     counter.innerText = getDownloadCounter();
+
+    let userNotificationDiv = document.getElementById("userDownloadsNotification");
+    userNotificationDiv.innerText = typeof iterateOverDownloads();
 </script>
 
 </html>

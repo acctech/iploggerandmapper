@@ -43,5 +43,12 @@ function getDownloadCounter(){
     return(Math.trunc(responseBody.counter));
 }
 
+function iterateOverDownloads(){
+    let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1")).body;
+    return responseBody;
+}
+
 log("...");
+
+
 

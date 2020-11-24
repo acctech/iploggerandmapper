@@ -84,10 +84,35 @@
 <div>
     <button onclick="getGoogleJSONData()">Google GEO Data Dump</button>
 </div>
+<div id="userDownloadsNotification"></div>
 <h1>Map of Users who have reported their IP</h1>
 <div id="map"></div>
+<h2>Downloads</h2>
+<div>
+<h3 id="counter" style=""></h3>
+</div>
 </body>
 
 <script src="./script.js"></script>
+<script>
+    let counter = document.getElementById("counter");
+    counter.innerText = getDownloadCounter();
+
+    function scrollThroughUserLocations(){
+        let userNotificationDiv = document.getElementById("userDownloadsNotification");
+        let arrayOfLocations = JSON.parse(iterateOverDownloads());
+        let indexVariable = 0;
+        function moveOntoNextLocation(){
+            if(indexVariable < arrayOfLocations.length) {
+                userNotificationDiv.innerText = "User Downloaded From: " + (indexVariable + 1) + " " + arrayOfLocations[indexVariable].city;
+                setTimeout(moveOntoNextLocation, 2000);
+            }
+            indexVariable++;
+        }
+        moveOntoNextLocation();
+    }
+
+    scrollThroughUserLocations();
+</script>
 
 </html>

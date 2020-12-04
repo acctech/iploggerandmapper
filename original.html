@@ -12,9 +12,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap"
             defer>
     </script>
-    <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOlUYGaj39bddODdR8c23O2UuM0hKstQ&map_ids=d7b42814bf968e06&callback=initMap">
-    </script>
     <style type="text/css">
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -32,87 +29,100 @@
             padding: 0;
         }
     </style>
-    <script>
-        let map;
-
-        function initMap() {
-
-            map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 3,
-                center: new google.maps.LatLng(-25.274398, 133.775136),
-                mapId: "d7b42814bf968e06",
-                disableDefaultUI: true
-            });
-
-            function httpGet(theUrl)
-            {
-                var xmlHttp = new XMLHttpRequest();
-                xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-                xmlHttp.send( null );
-                return xmlHttp.responseText;
-            }
-            let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1"));
-            eqfeed_callback(responseBody);
-
-        }
-
-        // Loop through the results array and place a marker for each
-        // set of coordinates.
-        const eqfeed_callback = function (results) {
-            for (let i = 0; i < results.features.length; i++) {
-                const coords = results.features[i].geometry.coordinates;
-                const latLng = new google.maps.LatLng(coords[1], coords[0]);
-                new google.maps.Marker({
-                    position: latLng,
-                    map: map,
-                });
-            }
-        };
-    </script>
 </head>
 
 <body>
 
 <h1>Console Output</h1>
+<input id="locationIs" value="academica"/>
 <p id="output"></p>
 <div>
-    <button onclick="logMyDownload('http://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf')">Simulate Download</button>
+    <button onclick="logMyDownload('http://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf', document.getElementById('locationIs').value)">Simulate Download</button>
 </div>
 <div>
-    <button onclick="getGeoData()">Get Geo Data Dump</button>
+    <button onclick="getGeoData(document.getElementById('locationIs').value)">Get Geo Data Dump</button>
 </div>
 <div>
-    <button onclick="getGoogleJSONData()">Google GEO Data Dump</button>
+    <button onclick="getGoogleJSONData(document.getElementById('locationIs').value)">Google GEO Data Dump</button>
 </div>
-<div id="userDownloadsNotification"></div>
-<h1>Map of Users who have reported their IP</h1>
-<div id="map"></div>
-<h2>Downloads</h2>
-<div>
-<h3 id="counter" style=""></h3>
-</div>
+<section>
+    <div class="padding3rem maxWidth800">
+        <h2>Map of users who have downloaded this journal</h2>
+
+        <p>Reader from: <span id="userDownloadedLocation"></span></p>
+        <div id="map"></div>
+        <p>ACC Journals have been downloaded
+            <span id="counter">this many</span>
+        </p>
+
+    </div>
+</section>
 </body>
 
 <script src="./script.js"></script>
 <script>
-    let counter = document.getElementById("counter");
-    counter.innerText = getDownloadCounter();
+    let map;
 
-    function scrollThroughUserLocations(){
-        let userNotificationDiv = document.getElementById("userDownloadsNotification");
-        let arrayOfLocations = JSON.parse(iterateOverDownloads());
-        let indexVariable = 0;
-        function moveOntoNextLocation(){
-            if(indexVariable < arrayOfLocations.length) {
-                userNotificationDiv.innerText = "User Downloaded From: " + (indexVariable + 1) + " " + arrayOfLocations[indexVariable].city;
-                setTimeout(moveOntoNextLocation, 2000);
-            }
-            indexVariable++;
+    const counterFor = document.getElementById("locationIs").value;
+
+    function initMap() {
+
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 3,
+            center: new google.maps.LatLng(-25.274398, 133.775136),
+            mapId: "d7b42814bf968e06",
+            disableDefaultUI: true,
+            useStaticMap: true,
+        });
+
+        function httpGet(theUrl)
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+            xmlHttp.send( null );
+            return xmlHttp.responseText;
         }
-        moveOntoNextLocation();
+        let responseBody = getGoogleGeoData(counterFor);
+        eqfeed_callback(responseBody);
+
+
     }
 
-    scrollThroughUserLocations();
+    // Loop through the results array and place a marker for each
+    // set of coordinates.
+    const eqfeed_callback = function (results) {
+        // show locations as text
+        let userNotificationDiv = document.getElementById("userDownloadedLocation");
+        for (let i = 0; i < results.features.length; i++) {
+            const coords = results.features[i].geometry.coordinates;
+            const latLng = new google.maps.LatLng(coords[1], coords[0]);
+            setTimeout(function() {
+                userNotificationDiv.innerText = results.features[i].geometry.city;
+                new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 3,
+                    },
+                });
+            }, i * 2000);
+        }
+    };
+
+    // total download counter
+    let counterElement = document.getElementById("counter");
+    let counter = getDownloadCounter(counterFor);
+    counter.innerHTML = counter;
+
+    let counterSuffix = "time";
+    if (counter !== 1){
+        counterSuffix = counterSuffix + "s";
+    }
+    counterElement.textContent = counter + " " + counterSuffix;
+    console.log(counterElement.textContent)
+
 </script>
 
 </html>

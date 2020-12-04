@@ -854,6 +854,8 @@ src="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Acad
 
     function initMap() {
 
+
+
         map = new google.maps.Map(document.getElementById("map"), {
             zoom: 3,
             center: new google.maps.LatLng(-25.274398, 133.775136),
@@ -869,7 +871,7 @@ src="https://www.acc.edu.au/img/content-images/journals/academia/issue1/ACC-Acad
             xmlHttp.send( null );
             return xmlHttp.responseText;
         }
-        let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1"));
+        let responseBody = JSON.parse(httpGet("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?geodata=1&googlemap=1&locationDataFor=" + locationData));
         eqfeed_callback(responseBody);
 
 

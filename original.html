@@ -54,9 +54,9 @@
 
 <script src="./script.js"></script>
 <script>
-    let map;
-
     const counterFor = document.getElementById("locationIs").value;
+
+    let map;
 
     function initMap() {
 
@@ -68,17 +68,7 @@
             useStaticMap: true,
         });
 
-        function httpGet(theUrl)
-        {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-            xmlHttp.send( null );
-            return xmlHttp.responseText;
-        }
-        let responseBody = getGoogleGeoData(counterFor);
-        eqfeed_callback(responseBody);
-
-
+        loadDataIntoCounterAndMap();
     }
 
     // Loop through the results array and place a marker for each
@@ -104,17 +94,29 @@
         }
     };
 
-    // total download counter
-    let counterElement = document.getElementById("counter");
-    let counter = getDownloadCounter(counterFor);
-    counter.innerHTML = counter;
+    function loadDataIntoCounterAndMap(){
 
-    let counterSuffix = "time";
-    if (counter !== 1){
-        counterSuffix = counterSuffix + "s";
+        getGoogleGeoData(counterFor, function(responseString) {
+            let jsonResponse = JSON.parse(responseString);
+            eqfeed_callback(jsonResponse)
+        });
+
+        getDownloadCounter(counterFor, function(counters){
+            // total download counter
+            let counterElement = document.getElementById("counter");
+            let counter = counters;
+            counter.innerHTML = counter;
+
+            let counterSuffix = "time";
+            if (counter !== 1){
+                counterSuffix = counterSuffix + "s";
+            }
+            counterElement.textContent = counter + " " + counterSuffix;
+            console.log(counterElement.textContent)
+        });
     }
-    counterElement.textContent = counter + " " + counterSuffix;
-    console.log(counterElement.textContent)
+
+
 
 </script>
 

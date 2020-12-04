@@ -36,7 +36,7 @@
 <h1>Console Output</h1>
 <input id="locationIs" value="academica"/>
 <div>
-    <button onclick="logMyDownload('http://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf', document.getElementById('locationIs').value)">Simulate Download</button>
+    <button onclick="logMyDownload('http://www.acc.edu.au/journals/academica/ACC-Academica-Vol-1-digital.pdf', document.getElementById('locationIs').value)">Download</button>
 </div>
 <section>
     <div class="padding3rem maxWidth800">
@@ -45,7 +45,7 @@
         <p>Reader from: <span id="userDownloadedLocation"></span></p>
         <div id="map"></div>
         <p>ACC Journals have been downloaded
-            <span id="counter">this many</span>
+            <span id="counter">this many times</span>
         </p>
 
     </div>
@@ -54,7 +54,7 @@
 
 <script src="./script.js"></script>
 <script>
-    const counterFor = document.getElementById("locationIs").value;
+    const counterFor = document.getElementById("locationIs").innerText;
 
     let map;
 

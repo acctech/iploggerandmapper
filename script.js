@@ -21,7 +21,7 @@ function logMyDownload(pdfURL, counterFor, callback){
             httpGetAsync("https://script.google.com/macros/s/AKfycbxMeewqkNbSxvWV-XkEpma5ATDTiA5_rd78xdGvMZwGa1NkNJnI/exec" + "?ip=" + ip + "&counterFor=" + counterFor, callback);
             console.log("Thank you for downloading.");
         });
-    } catch (e) {}
+    } catch (e) { console.log(e) }
     // Let the user get the download here //
     window.open(pdfURL, "_blank");
 }
